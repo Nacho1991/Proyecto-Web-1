@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Resultados de b&uacute;squeda</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="JavaScript/Script.js"></script>
+        <link rel="stylesheet" type="text/css" href="CSS/EstiloResultado.css">
+        <base href="C:/ProyectoUno/public_html/Imagenes/">
+    </head>
+    <body>
+        <div id="resultado">
+            <img id="logoUTN2" src="Logo.png">
+            <br/>
+            <fieldset>
+                <legend>Resultados de busqueda</legend>
+                <div class="CSSTableGenerator" >
+                    <table id="tablaResultado">
+                        <tr>
+                            <td>Nombre</td>
+                            <td>Apellidos</td>
+                            <td>Foto de perfil</td>
+                        </tr>
+                        <tr>
+                            <td>Ignacio</td>
+                            <td>Valerio Vega</td>
+                            <td>
+                                <img id="fotoPerfil" src="Estudiante.png">
+                                <input type="button" value="Ver detalles" name="btnDetalles" onclick="oculta('resultado');
+                                        muestra('detalles')"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Alberto</td>
+                            <td>Gonzalez Araya</td>
+                            <td>
+                                <img id="fotoPerfil" src="Estudiante.png">
+                                <input type="button" value="Ver detalles" name="btnDetalles" onclick="oculta('resultado');
+                                        muestra('detalles')"/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </fieldset>
+            <input type="button" value="Atrás" name="btnAtras" onclick="retroceder()"/>
+        </div>
+        <div id="detalles">
+            <img id="logoUTN2" src="Logo.png">
+            <fieldset>
+                <legend>Detalles del estudiante</legend>
+                <label>C&eacute;dula:</label>
+                <label>206910083</label>
+                <br/>
+                <label>Nombre:</label>
+                <label>José Ignacio</label>
+                <br/>
+                <label>Apellidos:</label>
+                <label>Valerio Vega</label>
+                <br/>
+                <label>Carrera:</label>
+                <label>Ingenier&iacute;a en Software </label>
+                <br/>
+                <label>Nivel de ingles:</label>
+                <label>Avanzado </label>
+                <br/>
+                <label>Skills:</label>
+                <label>Responsable, Honrado, Liderato, Trabajo en equipo </label>
+                <br/>
+                <label>Curso:</label>
+                <label>Diseño Web</label>
+                <br/>
+                <label>Duracion:</label>
+                <label>22 días</label>
+                <br/>
+                <label>Tecnologias usadas:</label>
+                <label>SublimeText(software)-HTML5-CSS(lenguaje-diseño)</label>
+                <br/>
+                <label>Descripcion del proyecto:</label>
+                <label>Desarrollar el diseño e interacciones básicas de una aplicación Web, utilizando los bosquejos que el profesor proveerá.</label>
+                <br/>
+                <label>Calificacion:</label>
+                <label>95%</label>
+                <br/>
+                <label>Fecha de matricula:</label>
+                <label>18/Enero/2011</label>
+            </fieldset>
+            <input type="button" value="Volver a los resultados" name="btnVolverResultados" onclick="oculta('detalles');
+                    muestra('resultado')"/>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+  table.tabs {
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: transparent;
+    font-size: 0.9em;
+}
+img
+{
+    width:150px;
+    height:150px;
+    animation: ease;
+}
+#login
+{
+    background: #5b6fe6;
+    width: 200px;
+    margin: 100px auto;
+    padding: 2em;
+    border-radius: 8px;
+}
+#pie
+{
+    font-family: arial;
+    font-size: 6px;
+}
+body
+{
+    background: aliceblue;
+}
+h1
+{
+    font-family: arial;
+    color: #000000;
+}
+input[type="text"],input[type="submit"],input[type="password"]
+{
+    border-radius: 3px;
+    padding: 2px;
+    width: 190px;
+}
+input[type = "submit"]:hover,form a:hover
+{
+    background: #0040ff;
+    cursor: pointer;
+}
+

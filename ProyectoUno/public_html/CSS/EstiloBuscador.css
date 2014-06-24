@@ -1,0 +1,43 @@
+
+#buscador
+{
+    border:2px solid #6666ff;
+    border-radius: 20px;
+    background: #6666ff;
+    background-color:#6666ff; 
+    width:550px;
+    margin:200px;
+    margin-left: 350px;
+    margin-bottom: 500px;
+    margin-top: 200px;
+    padding: 20px;
+    text-align:center;
+    font: 100% sans-serif;
+}
+#logoUTN
+{
+    border: 2px solid #ffffff;
+    border-radius:20px;
+    background: #ffffff;
+}
+#opcionesbusqueda
+{
+    text-align: left;
+    margin-left: 350px;
+    margin-top: 10px;
+    font: 100% sans-serif;
+}
+#btnBuscar
+{
+    border-radius: 20px;
+    font: 100% sans-serif;
+}
+#txtBuscar
+{
+    border-radius: 10px;
+    font: 100% sans-serif;
+}
+#lblBuscar
+{
+    font: 100% sans-serif;
+}

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DashBoard</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="JavaScript/Script.js"></script>
+        <script type="text/javascript" src="C:/ProyectoUno/JavaScript/jquery.js"></script>
+        <link rel="stylesheet" type="text/css" href="CSS/EstilosDashBoard.css">
+        <base href="C:/ProyectoUno/public_html/Imagenes/">
+    </head>
+    <body id="fondo" onload="activarTab(this);
+            ocultaTodo()">
+        <header>
+            <img src="Icono.png">
+            <h1>UTN Perfiles</h1>
+            <div id="pestnnas">
+                <p id="pestannaUno">
+                    DashBoard
+                </p>
+                <p id="pestannaDos">
+                    DashBoard>Carreras
+                </p>
+                <p id="pestannaTres">
+                    DashBoard>Carreras>Estudiantes
+                </p>
+                <p id="pestannaCuatro">
+                    DashBoard>Carreras>Estudiantes>Usuarios
+                </p>
+            </div>
+        </header>
+        <div id="cerrarSesion">
+            <section>
+                <article>
+                    <p>Bienvenido Administrador<a href="C:/ProyectoUno/public_html/Login.html">  Cerrar sesi&oacute;n</a></p>
+                </article>
+            </section>	
+        </div>
+        <div id="dashboard">
+            <table id="Pestañas" class="tabs" data-min="0" data-max="4">
+                <tr>
+                    <th class="tabcks">&nbsp;</th>
+                    <th class="tabck" id="tabck-0" onclick="activarTab(this);
+                            muestra('pestannaUno');
+                            oculta('pestannaDos');
+                            oculta('pestannaTres');
+                            oculta('pestannaCuatro')">DashBoard</th>
+                    <th class="tabcks">&nbsp;</th>
+                    <th class="tabck" id="tabck-1" onclick="activarTab(this);
+                            oculta('pestannaUno');
+                            muestra('pestannaDos');
+                            oculta('pestannaTres');
+                            oculta('pestannaCuatro')">Carreras</th>
+                    <th class="tabcks">&nbsp;</th>
+                    <th class="tabck" id="tabck-2" onclick="activarTab(this);
+                            oculta('pestannaUno');
+                            oculta('pestannaDos');
+                            muestra('pestannaTres');
+                            oculta('pestannaCuatro')">Estudiantes</th>
+                    <th class="tabcks">&nbsp;</th>
+                    <th class="tabck" id="tabck-3" onclick="activarTab(this);
+                            oculta('pestannaUno');
+                            oculta('pestannaDos');
+                            oculta('pestannaTres');
+                            muestra('pestannaCuatro')">Usuarios</th>
+                </tr>
+                <tr class="filadiv">
+                    <td colspan="10" id="tab-0">
+                        <div class="tabdiv" id="tabdiv-0">
+                            <fieldset>
+                                <legend>Historial de búsquedas</legend>
+                                <p>2014/06/01 - Aguilar JS</p>
+                                <p>2014/08/28 - DataBase P</p>
+                                <p>2014/01/30 - PHP Code I</p>
+                                <p>2014/04/12 - Ruby On Rail</p>
+                                <p>2014/02/19 - Soporte TI</p>
+                            </fieldset>	
+                        </div>
+                        <div class="tabdiv" id="tabdiv-1">
+                            <div id="listacarreras">
+                                <fieldset>
+                                    <legend>Listas de carreras</legend>
+                                    <table class="tabla" id="tabla-1">
+                                        <tr id="columna-1">
+                                            <td>Código</td>
+                                            <td>Nombre de la carrera</td>
+                                            <td>Opciones</td>
+                                        </tr>
+                                        <tr id="columna-2">
+                                            <td>ISW</td>
+                                            <td>Ingenieria En Software</td>
+                                            <td>
+                                                <input type="button" value="Editar" name="btnEditar" onclick="muestra('editarcarrera');
+                                                        oculta('listacarreras');
+                                                        oculta('mensajecarreraeliminad');
+                                                        oculta('mensajecarreramodificada')" />
+                                                <input type="button" value="Eliminar" name="btnEliminar" onclick="confirmacion();
+                                                        muestra('mensajecarreraeliminad')"/>
+                                            </td>
+                                        </tr>
+                                        <tr id="columna-3">
+                                            <td>COFI</td>
+                                            <td>Contabilidad y Finanzas</td>
+                                            <td>
+                                                <input type="button" value="Editar" name="btnEditar" onclick="muestra('editarcarrera');
+                                                        oculta('listacarreras');
+                                                        oculta('mensajecarreraeliminad');
+                                                        oculta('mensajecarreramodificada')" />
+                                                <input type="button" value="Eliminar" name="btnEliminar" onclick="confirmacion();
+                                                        muestra('mensajecarreraeliminad')"/>
+                                            </td>
+                                        </tr>
+                                        <tr id="columna-4">
+                                            <td>ADM</td>
+                                            <td>Comercio Exterior</td>
+                                            <td>
+                                                <input type="button" value="Editar" name="btnEditar" onclick="muestra('editarcarrera');
+                                                        oculta('listacarreras');
+                                                        oculta('mensajecarreraeliminad');
+                                                        oculta('mensajecarreramodificada')"/>
+                                                <input type="button" value="Eliminar" name="btnEliminar" onclick="confirmacion();
+                                                        muestra('mensajecarreraeliminad')"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </fieldset>
+                                <input type="button" value="Agregar carrera" name="btnAgregaCarrera" onclick="oculta('listacarreras');
+                                        muestra('agregarcarrera');
+                                        oculta('mensajecarreraagregada');
+                                        oculta('mensajecarreramodificada');
+                                        oculta('mensajecarreraeliminad')"/>
+                            </div>
+                            <div id="agregarcarrera">
+                                <fieldset>
+                                    <legend>Datos a ingresar</legend>
+                                    <label>C&oacute;digo de la carrera:</label>
+                                    <input type="text" name="txtCodigoCarrera" value="" size="25" />
+                                    <br/>
+                                    <label>Nombre de la carrera:</label>
+                                    <input type="text" name="txtNombreCarrera" value="" size="25" />
+                                    <br/>
+                                    <label>Seleccionar Sede:</label>
+                                    <select name="cmbSedes">
+                                        <option>Sede San Carlos</option>
+                                        <option>Sede Atenas</option>
+                                        <option>Sede Central</option>
+                                        <option>Sede Pacifico</option>
+                                        <option>Sede Guanacaste</option>
+                                    </select>
+                                </fieldset>
+                                <input type="button" value="Agregar carrera" name="btnAgregarCarrera" onclick="muestra('listacarreras');
+                                        oculta('agregarcarrera');
+                                        muestra('mensajecarreraagregada')"/>
+                                <input type="button" value="Cancelar" name="btnCancelar" onclick="muestra('listacarreras');
+                                        oculta('agregarcarrera')"/>
+                            </div>
+                            <div id="editarcarrera">
+                                <fieldset>
+                                    <legend>Datos a modificar</legend>
+                                    <label>Codigo de la carrera:</label>
+                                    <input type="text" name="txtCodigo" value="" size="25" />
+                                    <br/>
+                                    <label>Nombre de la carrera:</label>
+                                    <input type="text" name="txtNombre" value="" size="25" />
+                                    <br/>
+                                    <label>Seleccionar Sede:</label>
+                                    <select name="cmbSedes">
+                                        <option>Sede San Carlos</option>
+                                        <option>Sede Atenas</option>
+                                        <option>Sede Central</option>
+                                        <option>Sede Pacifico</option>
+                                        <option>Sede Guanacaste</option>
+                                    </select>
+                                </fieldset>
+                                <input type="button" value="Modificar" name="btnModificar" onclick="muestra('mensajecarreramodificada');
+                                        oculta('editarcarrera');
+                                        muestra('listacarreras')"/>
+                                <input type="button" value="Cancelar" name="btnCancelar" onclick="
+                                        oculta('editarcarrera');
+                                        muestra('listacarreras')"/>
+                            </div>
+                            <p id="mensajecarreraeliminad">La carrera se ha eliminado con exito</p>
+                            <p id="mensajecarreraagregada">La carrera se ha registrado con exito</p>
+                            <p id="mensajecarreramodificada">La carrera se ha modificado con exito</p>
+                        </div>
+                        <div class="tabdiv" id="tabdiv-2">
+                            <div id="editarEstudiante">
+                                <fieldset>
+                                    <legend>Datos a modificar</legend>
+                                    <label>C&eacute;dula:</label>
+                                    <input type="text" name="txtcedula" value="" size="25"/>
+                                    <br/>
+                                    <label>Nombre:</label>
+                                    <input type="text" name="txtnombre" value="" size="25" />
+                                    <br/>
+                                    <label>Apellidos:</label>
+                                    <input type="text" name="txtapellidos" value="" size="25"/>
+                                    <br/>
+                                    <input type="button" name="btnAplicar" value="Aplicar cambios" OnClick="
+                                            muestra('tablaEstudiante');
+                                            oculta('editarEstudiante');
+                                            muestra('exitomodificadoestudiante')">
+                                    <input type="button" name="btnCancelar" value="Cancelar" OnClick="
+                                            muestra('tablaEstudiante');
+                                            oculta('editarEstudiante')">
+                                </fieldset>
+                            </div>
+                            <div id="detallesestudiante">
+                                <fieldset>
+                                    <legend>Detalle del estudiante</legend>
+                                    <label>C&eacute;dula:</label>
+                                    <label>206910083</label>
+                                    <br/>
+                                    <label>Nombre:</label>
+                                    <label>José Ignacio</label>
+                                    <br/>
+                                    <label>Apellidos:</label>
+                                    <label>Valerio Vega</label>
+                                    <br/>
+                                    <label>Carrera:</label>
+                                    <label>Ingenier&iacute;a en Software </label>
+                                    <br/>
+                                    <label>Nivel de ingles:</label>
+                                    <label>Avanzado </label>
+                                    <br/>
+                                    <label>Skills:</label>
+                                    <label>Responsable, Honrado, Liderato, Trabajo en equipo </label>
+                                    <br/>
+                                    <label>Curso:</label>
+                                    <label>Diseño Web</label>
+                                    <br/>
+                                    <label>Duracion:</label>
+                                    <label>22 días</label>
+                                    <br/>
+                                    <label>Tecnologias usadas:</label>
+                                    <label>SublimeText(software)-HTML5-CSS(lenguaje-diseño)</label>
+                                    <br/>
+                                    <label>Descripcion del proyecto:</label>
+                                    <label>Desarrollar el diseño e interacciones básicas de una aplicación Web, utilizando los bosquejos que el profesor proveerá.</label>
+                                    <br/>
+                                    <label>Calificacion:</label>
+                                    <label>95%</label>
+                                    <br/>
+                                    <label>Fecha de matricula:</label>
+                                    <label>18/Enero/2011</label>
+                                </fieldset>
+                                <input type="button" value="Atr&aacute;s" name="btnAtras" onclick="muestra('tablaEstudiante');
+                                        oculta('detallesestudiante');
+                                       "/>
+                            </div>
+                            <div id="agregarestudiante">
+                                <fieldset>
+                                    <legend>Datos a registrar</legend>
+                                    <label>
+                                        C&eacute;dula:
+                                    </label>
+                                    <input type="text" name="txtCedula" value="" size="25" />
+                                    <br/>
+                                    <label>
+                                        Nombre:
+                                    </label>
+                                    <input type="text" name="txtNombre" value="" size="25" />
+                                    <br/>
+                                    <label>
+                                        Apellidos:
+                                    </label>
+                                    <input type="text" name="txtApellidos" value="" size="25" />
+                                </fieldset>
+                                <input id="btnAgregar" type="button" value="Agregar estudiante" name="btnAgregar" onclick="muestra('tablaEstudiante');
+                                        oculta('agregarestudiante');
+                                        muestra('exitoagregadoestudiante');
+                                        oculta('exitoeliminadoestudiante');
+                                        oculta('exitomodificadoestudiante')" />
+                                <input id="btnCancelar" type="button" value="Cancelar" name="btnCancelar" onclick="muestra('tablaEstudiante');
+                                        oculta('agregarestudiante');" />
+                            </div>
+                            <p id="exitomodificadoestudiante">
+                                El estudiante se ha modificado satisfactoriamente
+                            </p>
+                            <p id="exitoagregadoestudiante">
+                                El estudiante se ha registrado con &eacute;xito
+                            </p>
+                            <p id="exitoeliminadoestudiante">
+                                El estudiante se ha eliminado con &eacute;xito
+                            </p>
+                            <div id="tablaEstudiante">
+                                <input id="btnAgregarEstudiante" type="button" value="Agregar estudiante" name="btnAgregarEstudiante" onclick="muestra('agregarestudiante');
+                                        oculta('tablaEstudiante');
+                                        oculta('exitoagregadoestudiante');
+                                        oculta('exitoeliminadoestudiante');
+                                        oculta('exitomodificadoestudiante')" />
+                                <fieldset>
+                                    <legend>Lista de estudiantes</legend>
+                                    <table class="tabla" id="tabla-1">
+                                        <tr id="columna-1">
+                                            <td>C&eacute;dula</td>
+                                            <td>Nombre del estudiante</td>
+                                            <td>Opciones</td>
+                                        </tr>
+                                        <tr id="columna-2">
+
+                                            <td>2691083</td>
+                                            <td> 
+                                                <p>
+                                                    Ignacio Valerio Vega
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <input type="button" name="btnEliminar" value="Eliminar" OnClick="confirmacion();
+                                                        oculta('exitoagregadoestudiante');
+                                                        oculta('exitomodificadoestudiante')">
+                                                <input type="button" name="btnEditar" value="Editar" OnClick="muestra('editarEstudiante');
+                                                        oculta('tablaEstudiante');
+                                                        oculta('exitoagregadoestudiante');
+                                                        oculta('exitoeliminadoestudiante');
+                                                        oculta('exitomodificadoestudiante')">
+                                                <input type="button" name="btnVerDetalles" value="Detalles" OnClick="muestra('detallesestudiante');
+                                                        oculta('tablaEstudiante');
+                                                        oculta('exitoagregadoestudiante');
+                                                        oculta('exitoeliminadoestudiante');
+                                                        oculta('exitomodificadoestudiante')">
+                                            </td>
+                                        </tr>
+                                        <tr id="columna-3">
+                                            <td>2654092</td>
+                                            <td> 
+                                                <p>
+                                                    Carlos Garcia Zu&ntilde;iga
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <input type="button" name="btnEliminar" value="Eliminar" OnClick="confirmacion();
+                                                        oculta('exitoagregadoestudiante');
+                                                        oculta('exitomodificadoestudiante')">
+                                                <input type="button" name="btnEditar" value="Editar" OnClick="muestra('editarEstudiante');
+                                                        oculta('tablaEstudiante');
+                                                        oculta('exitoagregadoestudiante');
+                                                        oculta('exitoeliminadoestudiante');
+                                                        oculta('exitomodificadoestudiante')">
+                                                <input type="button" name="btnVerDetalles" value="Detalles" OnClick="muestra('detallesestudiante');
+                                                        oculta('tablaEstudiante')">
+                                            </td>
+                                        </tr>
+                                        <tr id="columna-4">
+                                            <td>2671098</td>
+                                            <td>
+                                                <p>
+                                                    Sebastian Gomes Rodriguez
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <input type="button" name="btnEliminar" value="Eliminar" OnClick="confirmacion();
+                                                        oculta('exitoagregadoestudiante');
+                                                        oculta('exitomodificadoestudiante')">
+                                                <input type="button" name="btnEditar" value="Editar" OnClick="muestra('editarEstudiante');
+                                                        oculta('tablaEstudiante');
+                                                        oculta('exitoagregadoestudiante');
+                                                        oculta('exitoeliminadoestudiante');
+                                                        oculta('exitomodificadoestudiante')">
+                                                <input type="button" name="btnVerDetalles" value="Detalles" OnClick="muestra('detallesestudiante');
+                                                        oculta('tablaEstudiante')">
+                                            </td>
+                                        </tr>
+                                        <tr id="columna-5">
+                                            <td>2456001</td>
+                                            <td>
+                                                <p> 
+                                                    Emanuel Rodriguez Carballo
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <input type="button" name="btnEliminar" value="Eliminar" OnClick="confirmacion();
+                                                        oculta('exitoagregadoestudiante');
+                                                        oculta('exitomodificadoestudiante')">
+                                                <input type="button" name="btnEditar" value="Editar" OnClick="muestra('editarEstudiante');
+                                                        oculta('tablaEstudiante');
+                                                        oculta('exitoagregadoestudiante');
+                                                        oculta('exitoeliminadoestudiante');
+                                                        oculta('exitomodificadoestudiante')">
+                                                <input type="button" name="btnVerDetalles" value="Detalles" OnClick="muestra('detallesestudiante');
+                                                        oculta('tablaEstudiante')">
+                                            </td>
+                                        </tr>
+                                        <tr id="columna-6">
+                                            <td>2198235</td>
+                                            <td> 
+                                                <p> 
+                                                    Minor Jimenez Arguello
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <input type="button" name="btnEliminar" value="Eliminar" OnClick="confirmacion();
+                                                        oculta('exitoagregadoestudiante');
+                                                        oculta('exitomodificadoestudiante')">
+                                                <input type="button" name="btnEditar" value="Editar" OnClick="muestra('editarEstudiante');
+                                                        oculta('tablaEstudiante');
+                                                        oculta('exitoagregadoestudiante');
+                                                        oculta('exitoeliminadoestudiante');
+                                                        oculta('exitomodificadoestudiante')">
+                                                <input type="button" name="btnVerDetalles" value="Detalles" OnClick="muestra('detallesestudiante');
+                                                        oculta('tablaEstudiante')">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </fieldset>	
+                            </div>
+                        </div>
+                        <div class="tabdiv" id="tabdiv-3">
+                            <div id="agregarusuario">
+                                <fieldset>
+                                    <legend>Datos a registrar</legend>
+                                    <label>C&eacute;dula:</label>
+                                    <input type="text" name="txtCedula" value="" size="25" />
+                                    <br/>
+                                    <label>Nombre:</label>
+                                    <input type="text" name="txtNombre" value="" size="25" />
+                                    <br/>
+                                    <label>Apellidos:</label>
+                                    <input type="text" name="txtApellidos" value="" size="25" />
+                                    <br/>
+                                </fieldset>
+                                <fieldset>
+                                    <legend>Seleccionar privilegios</legend>
+                                    <select>
+                                        <option>Administrador</option>
+                                        <option>Privilegio 2</option>
+                                        <option>Privilegio 3</option>
+                                    </select> 
+                                </fieldset>
+                                <input type="button" id="btnAplicaDatos" value="Guardar datos" name="btnAplicaDatos" onclick="oculta('agregarusuario');
+                                        muestra('tablausuarios')"/>
+                                <input type="button" id="btnCancelarAgregar" value="Cancelar" name="btnCancelarAgregar" onclick="oculta('agregarusuario');
+                                        muestra('tablausuarios');
+                                        oculta('mensajeagregado');oculta('mensajeeliminado');oculta('mensajemodificado')"/>
+
+                            </div>
+                            <div id="editarusuario">
+                                <fieldset>
+                                    <legend>Datos a modificar</legend>
+                                    <label>C&eacute;dula:</label>
+                                    <input type="text" name="txtCedula" value="" size="25" />
+                                    <br/>
+                                    <label>Nombre:</label>
+                                    <input type="text" name="txtNombre" value="" size="25" />
+                                    <br/>
+                                    <label>Apellidos:</label>
+                                    <input type="text" name="txtApellidos" value="" size="25" />
+                                    <br/>
+                                </fieldset>
+                                <fieldset>
+                                    <legend>Seleccionar privilegios</legend>
+                                    <select>
+                                        <option>Administrador</option>
+                                        <option>Privilegio 2</option>
+                                        <option>Privilegio 3</option>
+                                    </select> 
+                                </fieldset>
+                                <input type="button" id="btnAplicaCambios" value="Aplicar cambios" name="btnAplicaCambios" onclick="oculta('editarusuario');
+                                        muestra('tablausuarios');
+                                        muestra('mensajemodificado')"/>
+                                <input type="button" id="btnCancelarUsuario" value="Cancelar" name="btnCancelarUsuario" onclick="oculta('editarusuario');
+                                        muestra('tablausuarios');
+                                        oculta('mensajeagregado');oculta('mensajeeliminado');oculta('mensajemodificado')"/>
+                            </div>
+                            <div id="tablausuarios">
+                                <input type="button" id="btnAgregarUsuario" value="Agregar usuario" name="btnAgregarUsuario" onclick="oculta('tablausuarios');
+                                        muestra('agregarusuario');
+                                        muestra('mensajeagregado')"/>
+                                <fieldset>
+                                    <legend>Listas de usuarios</legend>
+                                    <table class="tabla" id="tabla-1">
+                                        <tr id="columna-1">
+                                            <td>C&eacute;dula:</td>
+                                            <td>Nombre y apellidos</td>
+                                            <td>Privilegios</td>
+                                            <td>Opciones</td>
+                                        </tr>
+                                        <tr id="columna-2">
+                                            <td>206910083</td>
+                                            <td>Ignacio Valerio Vega</td>
+                                            <td>Administrador</td>
+                                            <td>
+                                                <input type="button" value="Editar" id="btnEditarUsuario" name="btnEditarUsuario" onclick="muestra('editarusuario');
+                                                        oculta('tablausuarios');
+                                                        muestra('mensajemodificado')"/>
+                                                <input type="button" value="Eliminar" name="btnEliminarUsuario" onclick="confirmacion();
+                                                        muestra('mensajeeliminado')"/>
+                                            </td>
+                                        </tr>
+                                        <tr id="columna-3">
+                                            <td>207330002</td>
+                                            <td>Jessica Gomes Soza</td>
+                                            <td>Administrador</td>
+                                            <td>
+                                                <input type="button" value="Editar" name="btnEditarUsuario" onclick="muestra('editarusuario');
+                                                        oculta('tablausuarios');
+                                                        muestra('mensajemodificado')"/>
+                                                <input type="button" value="Eliminar" name="btnEliminarUsuario" onclick="confirmacion();
+                                                        muestra('mensajeeliminado')"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </fieldset>
+                                <p id="mensajeagregado">El usuario se ha agregado satisfactoriamente</p>
+                                <p id="mensajemodificado">El usuario se ha modificado satisfactoriamente</p>
+                                <p id="mensajeeliminado">El usuario se ha eliminado con &eacute;xito</p>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

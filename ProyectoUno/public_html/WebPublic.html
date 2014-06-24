@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Buscador UTN</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="JavaScript/Script.js"></script>
+        <link rel="stylesheet" type="text/css" href="CSS/EstiloBuscador.css">
+        <base href="C:/ProyectoUno/public_html/Imagenes/">
+    </head>
+    <body>
+        <div id="buscador">
+            <img id="logoUTN" src="Logo.png">
+            <br/>
+            <label id="lblBuscar">Buscar estudiante:</label>
+            <input id="txtBuscar" type="text" name="txtBuscador" value="" size="50" placeholder="Buscar por opcion aqu&iacute;"/>
+            <input id="btnBuscar" type="button" value="Buscar" name="btnBuscar" onclick="resultado();"/>
+            <div id="opcionesbusqueda">
+                <fieldset>
+                    <legend>Opciones de busqueda</legend>
+                    <input type="checkbox" name="chkSkills" value="Habilidades"> Habilidades<br>
+                    <input type="checkbox" name="chkTecnologia" value="Tecnologia"> Tecnologia
+                </fieldset>
+            </div>
+        </div>
+    </body>
+</html>
