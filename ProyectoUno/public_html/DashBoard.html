@@ -68,7 +68,7 @@
                     <td colspan="10" id="tab-0">
                         <div class="tabdiv" id="tabdiv-0">
                             <fieldset>
-                                <legend>Historial de búsquedas</legend>
+                                <legend>Historial de b&uacute;squedas</legend>
                                 <p>2014/06/01 - Aguilar JS</p>
                                 <p>2014/08/28 - DataBase P</p>
                                 <p>2014/01/30 - PHP Code I</p>
@@ -88,7 +88,7 @@
                                         </tr>
                                         <tr id="columna-2">
                                             <td>ISW</td>
-                                            <td>Ingenieria En Software</td>
+                                            <td>Ingenier&iacute;a En Software</td>
                                             <td>
                                                 <input type="button" value="Editar" name="btnEditar" onclick="muestra('editarcarrera');
                                                         oculta('listacarreras');
@@ -157,7 +157,7 @@
                             <div id="editarcarrera">
                                 <fieldset>
                                     <legend>Datos a modificar</legend>
-                                    <label>Codigo de la carrera:</label>
+                                    <label>C&oacute;digo de la carrera:</label>
                                     <input type="text" name="txtCodigo" value="" size="25" />
                                     <br/>
                                     <label>Nombre de la carrera:</label>
@@ -179,31 +179,53 @@
                                         oculta('editarcarrera');
                                         muestra('listacarreras')"/>
                             </div>
-                            <p id="mensajecarreraeliminad">La carrera se ha eliminado con exito</p>
-                            <p id="mensajecarreraagregada">La carrera se ha registrado con exito</p>
-                            <p id="mensajecarreramodificada">La carrera se ha modificado con exito</p>
+                            <p id="mensajecarreraeliminad">La carrera se ha eliminado con &eacute;xito</p>
+                            <p id="mensajecarreraagregada">La carrera se ha registrado con &eacute;xito</p>
+                            <p id="mensajecarreramodificada">La carrera se ha modificado con &eacute;xito</p>
                         </div>
                         <div class="tabdiv" id="tabdiv-2">
                             <div id="editarEstudiante">
                                 <fieldset>
                                     <legend>Datos a modificar</legend>
                                     <label>C&eacute;dula:</label>
+                                    <br/>
                                     <input type="text" name="txtcedula" value="" size="25"/>
                                     <br/>
                                     <label>Nombre:</label>
+                                    <br/>
                                     <input type="text" name="txtnombre" value="" size="25" />
                                     <br/>
                                     <label>Apellidos:</label>
+                                    <br/>
                                     <input type="text" name="txtapellidos" value="" size="25"/>
                                     <br/>
-                                    <input type="button" name="btnAplicar" value="Aplicar cambios" OnClick="
-                                            muestra('tablaEstudiante');
-                                            oculta('editarEstudiante');
-                                            muestra('exitomodificadoestudiante')">
-                                    <input type="button" name="btnCancelar" value="Cancelar" OnClick="
-                                            muestra('tablaEstudiante');
-                                            oculta('editarEstudiante')">
+                                    <label>Curso:</label>
+                                    <br/>
+                                    <input type="text" name="txtCurso" value="" size="25">
+                                    <br>
+                                    <label>Calificación:</label>
+                                    <br/>
+                                    <input type="text" name="txtCalificacion" value="" size="25">
+                                    <br/>
+                                    <label>Carrera:</label>
+                                    <br/>
+                                    <SELECT NAME="selCombo" SIZE="1"> 
+                                        <OPTION>ISW</OPTION>
+                                        <OPTION>COFI</OPTION>
+                                        <OPTION>ADM</OPTION>
+                                    </SELECT> 
+                                    <br/>
+                                    <label>Comentarios:</label>
+                                    <br/>
+                                    <textarea name="txtComentarios" cols="40" rows="5"></textarea>
                                 </fieldset>
+                                <input type="button" name="btnAplicar" value="Aplicar cambios" OnClick="
+                                        muestra('tablaEstudiante');
+                                        oculta('editarEstudiante');
+                                        muestra('exitomodificadoestudiante')">
+                                <input type="button" name="btnCancelar" value="Cancelar" OnClick="
+                                        muestra('tablaEstudiante');
+                                        oculta('editarEstudiante')">
                             </div>
                             <div id="detallesestudiante">
                                 <fieldset>
@@ -229,19 +251,19 @@
                                     <label>Curso:</label>
                                     <label>Diseño Web</label>
                                     <br/>
-                                    <label>Duracion:</label>
+                                    <label>Duraci&oacute;n:</label>
                                     <label>22 días</label>
                                     <br/>
-                                    <label>Tecnologias usadas:</label>
+                                    <label>Tecnolog&iacute;as usadas:</label>
                                     <label>SublimeText(software)-HTML5-CSS(lenguaje-diseño)</label>
                                     <br/>
-                                    <label>Descripcion del proyecto:</label>
+                                    <label>Descripci&oacute;n del proyecto:</label>
                                     <label>Desarrollar el diseño e interacciones básicas de una aplicación Web, utilizando los bosquejos que el profesor proveerá.</label>
                                     <br/>
-                                    <label>Calificacion:</label>
+                                    <label>Calificaci&oacute;n:</label>
                                     <label>95%</label>
                                     <br/>
-                                    <label>Fecha de matricula:</label>
+                                    <label>Fecha de matrícula:</label>
                                     <label>18/Enero/2011</label>
                                 </fieldset>
                                 <input type="button" value="Atr&aacute;s" name="btnAtras" onclick="muestra('tablaEstudiante');
@@ -254,17 +276,40 @@
                                     <label>
                                         C&eacute;dula:
                                     </label>
+                                    <br/>
                                     <input type="text" name="txtCedula" value="" size="25" />
                                     <br/>
                                     <label>
                                         Nombre:
                                     </label>
+                                    <br/>
                                     <input type="text" name="txtNombre" value="" size="25" />
                                     <br/>
                                     <label>
                                         Apellidos:
                                     </label>
+                                    <br/>
                                     <input type="text" name="txtApellidos" value="" size="25" />
+                                    <br/>
+                                    <label>Curso:</label>
+                                    <br/>
+                                    <input type="text" name="txtCurso" value="" size="25">
+                                    <br>
+                                    <label>Calificación:</label>
+                                    <br/>
+                                    <input type="text" name="txtCalificacion" value="" size="25">
+                                    <br/>
+                                    <label>Carrera:</label>
+                                    <br/>
+                                    <SELECT NAME="selCombo" SIZE="1"> 
+                                        <OPTION>ISW</OPTION>
+                                        <OPTION>COFI</OPTION>
+                                        <OPTION>ADM</OPTION>
+                                    </SELECT> 
+                                    <br/>
+                                    <label>Comentarios:</label>
+                                    <br/>
+                                    <textarea name="txtComentarios" cols="40" rows="5"></textarea>
                                 </fieldset>
                                 <input id="btnAgregar" type="button" value="Agregar estudiante" name="btnAgregar" onclick="muestra('tablaEstudiante');
                                         oculta('agregarestudiante');
@@ -431,7 +476,9 @@
                                         muestra('tablausuarios')"/>
                                 <input type="button" id="btnCancelarAgregar" value="Cancelar" name="btnCancelarAgregar" onclick="oculta('agregarusuario');
                                         muestra('tablausuarios');
-                                        oculta('mensajeagregado');oculta('mensajeeliminado');oculta('mensajemodificado')"/>
+                                        oculta('mensajeagregado');
+                                        oculta('mensajeeliminado');
+                                        oculta('mensajemodificado')"/>
 
                             </div>
                             <div id="editarusuario">
@@ -460,7 +507,9 @@
                                         muestra('mensajemodificado')"/>
                                 <input type="button" id="btnCancelarUsuario" value="Cancelar" name="btnCancelarUsuario" onclick="oculta('editarusuario');
                                         muestra('tablausuarios');
-                                        oculta('mensajeagregado');oculta('mensajeeliminado');oculta('mensajemodificado')"/>
+                                        oculta('mensajeagregado');
+                                        oculta('mensajeeliminado');
+                                        oculta('mensajemodificado')"/>
                             </div>
                             <div id="tablausuarios">
                                 <input type="button" id="btnAgregarUsuario" value="Agregar usuario" name="btnAgregarUsuario" onclick="oculta('tablausuarios');
